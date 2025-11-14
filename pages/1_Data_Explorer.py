@@ -110,10 +110,10 @@ st.dataframe(daily.style.format({
 }), use_container_width=True)
 
 # Explain what was analyzed
-with st.expander("What this app is doing under the hood"):
-    st.markdown("""
+
+ st.markdown("""
 - Retrieves hourly temperature and wind from **Open‑Meteo** for the chosen place and date range.
 - Computes **daily aggregates** (min/mean/max) and **moving averages** over the selected window.
 - Renders **dynamic, interactive charts** that update when you change inputs.
 - All processing (resampling, aggregation, rolling window) is implemented in this code (no LLM).
-
+    """)
