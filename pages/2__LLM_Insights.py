@@ -87,7 +87,10 @@ st.write(f"**Date:** {forecast_date}")
 st.write(f"High: {high_temp:.1f}, Low: {low_temp:.1f}, Avg Wind: {avg_wind:.1f}, Total Precip: {total_precip:.1f}")
 
 
-genai.configure(api_key=os.getenv("GEMINI_API_KEY"))  model = genai.GenerativeModel("gemini-pro")
+
+genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
+model = genai.GenerativeModel("gemini-pro")
+
 
 
 prompt = f"""
@@ -107,4 +110,5 @@ if st.button("Generate AI Forecast"):
         response = model.generate_content(prompt)
         st.success("Here’s your AI-generated forecast:")
         st.write(response.text)
+
 
